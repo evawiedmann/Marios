@@ -1,13 +1,8 @@
 class ReviewsController < ApplicationController
-  #
-  # def index
-  #   @review = Review.all
-  #   render :index
-  # end
 
   def new
     @product = Product.find(params[:product_id])
-    @review = Review.new
+    @review = @product.reviews.new
     render :new
   end
 
@@ -36,8 +31,10 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
     if @review.update(review_params)
+      flash[:notice] = "Review updated!"
       redirect_to product_path(@review.product)
     else
       render :edit
@@ -52,6 +49,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:name, :genre)
+    params.require(:review).permit(:author, :content_body, :rating)
   end
 end
