@@ -7,9 +7,9 @@
   <li>Address: 1234 Main St.</li>
 </ul>
 
-<% if @products.any? %>
+<% if @product.any? %>
   <ul>
-    <% @products.each do |product| %>
+    <% @product.each do |product| %>
       <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>
