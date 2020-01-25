@@ -13,10 +13,16 @@
  *= require_tree .
  *= require_self
  */
- justify-content:
+ body {
+   justify-content: center
+   background-color:red
+ }
+
+h1 {
+  color: darkred
+}
 
 
- background-color:
 
     background-image: url();
 
