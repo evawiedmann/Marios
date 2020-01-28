@@ -16,20 +16,11 @@ class ReviewsController < ApplicationController
     end
   end
 
-  # Other controller actions go here.
-
   def edit
     @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
     render :edit
   end
-
-  def show
-    @product = Product.find(params[:product_id])
-    @review = Review.find(params[:id])
-    render :show
-  end
-
   def update
     @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
@@ -40,6 +31,13 @@ class ReviewsController < ApplicationController
       render :edit
     end
   end
+
+  def show
+    @product = Product.find(params[:product_id])
+    @review = Review.find(params[:id])
+    render :show
+  end
+
 
   def destroy
     @review = Review.find(params[:id])
