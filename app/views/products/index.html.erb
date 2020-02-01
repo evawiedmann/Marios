@@ -1,22 +1,19 @@
 <h1>Mario's</h1>
-<h3>Fine Cuisine with a Smile</h3>
-<h4>Contact Information</h4>
-<ul>
-  <li>Telephone: XXX-XXX-XXXX</li>
-  <li>Email: xxxxxx@xxxx.com</li>
-  <li>Address: 1234 Main St.</li>
-</ul>
+
+<h4>Current Inventory</h4>
 
 <% if @product.any? %>
-  <ul>
-    <% @product.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
+<ul>
+  <% @product.each do |product| %>
+  <li><%= link_to product.name, product_path(product) %></li>
+  <% end %>
+</ul>
 <% else %>
-  <p>There are no products yet.</p>
+<p>There are no products yet.</p>
 <% end %>
 <br>
 
 
 <p><%= link_to "Create new product", new_product_path %></p>
+
+<p><%= link_to "Return to products", products_path %></p>
