@@ -5,4 +5,4 @@ class HomeController < ApplicationController
     render :index
 
   end
-endd
+end
