@@ -10,8 +10,10 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
     if @review.save
+      flash[:notice] = "Review added!"
       redirect_to product_path(@product)
     else
+      flash[:alert] = "Review not added, try again"
       render :new
     end
   end
@@ -25,13 +27,13 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
     if @review.update(review_params)
-      flash[:notice] = "Review updated!"
+      flash[:notice] = "Product successfully updated!"
       redirect_to product_path(@review.product)
     else
+      flash[:alert] = "Review did not update, try again"
       render :edit
     end
   end
-
   def show
     @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
