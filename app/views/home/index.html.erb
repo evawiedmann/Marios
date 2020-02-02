@@ -35,7 +35,7 @@
 
 <% if @product.any? %>
 <ul>
-  <% @product.usa_made_product.each do |p| %>
+  <% @product.usa_made_product.each do |product| %>
   <li><%= link_to product.name, product_path(product) %></li>
   <% end %>
 </ul>

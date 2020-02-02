@@ -9,10 +9,14 @@ class ReviewsController < ApplicationController
   def create
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
+    puts '%%%%%%%%'
+    puts review_params
     if @review.save
+      puts '****************'
       flash[:notice] = "Review added!"
       redirect_to product_path(@product)
     else
+      puts @review
       flash[:alert] = "Review not added."
       render :new
     end
