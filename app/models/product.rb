@@ -13,11 +13,12 @@ class Product < ApplicationRecord
     .limit(1)
     )}
 
-
     scope :country_of_origin, -> (country_of_origin_parameter) { where(country_of_origin: "USSR") }
+    scope :usa_made_product, -> { where(country_of_origin: "USA") }
+    before_save(:titleize_product)
 
-  private
-  def titleize_product
-    self.name = self.name.titleize
+    private
+    def titleize_product
+      self.name = self.name.titleize
+    end
   end
-end
