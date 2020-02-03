@@ -14,14 +14,9 @@
  *= require_self
  */
  body {
-   justify-content_body: center
-   background-color: red
- }
-
+   text-align: center;
+   background-color: lightblue;
+}
 h1 {
   color: darkred
-}
-
-everything {
-  margin: 20px
 }
