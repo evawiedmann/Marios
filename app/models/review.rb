@@ -3,5 +3,5 @@ class Review < ApplicationRecord
   validates :author, presence: true
   validates :content_body, presence: true, length: { minimum: 50, maximum: 250 }
   validates :rating, presence: true
-  validates :rating, numericality: { less_than_or_equal_to: 5 }
+  validates :rating,  inclusion: 1..5
 end

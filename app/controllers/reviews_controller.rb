@@ -14,7 +14,6 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review added!"
       redirect_to product_path(@product)
     else
-      puts @review
       flash[:alert] = "Review not added."
       render :new
     end
@@ -32,6 +31,7 @@ class ReviewsController < ApplicationController
       flash[:notice] = "Review updated!"
       redirect_to product_path(@review.product)
     else
+      flash[:notice] = "Review not updated."
       render :edit
     end
   end
