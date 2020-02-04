@@ -14,9 +14,14 @@
  *= require_self
  */
  body {
-   text-align: center;
+   font-family: 'Garamond', sans-serif;
    background-color: lightblue;
 }
 h1 {
-  color: darkred
+  color: darkblue;
+  text-align: center;
+  font-size: 45px;
+}
+#fine {
+  text-align: center;
 }
